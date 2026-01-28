@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+
+ padding: 5px;
+}
+nav a{
+    text-decoration: none;
+    margin-left: 55px;
+    padding :5px;
+}
+header{
+    background-color: rgb(195, 206, 89);
+    height: 30px;
+}
+#try{
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    border-radius: 30px;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    margin: 5px;
+    display: inline-block; 
+}
+#never2{
+    z-index: 1;
+    position: absolute;
+    left: 20px;
+}
+#container{
+    
+    border :3px solid black;
+    margin: 5px;
+}
+#never4{
+    position: fixed;
+    right: 10px;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    background-color: rgb(99, 16, 201);
+}

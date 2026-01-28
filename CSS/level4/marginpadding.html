@@ -1,0 +1,41 @@
+<!-- This HTML file demonstrates the use of padding and margin in CSS  And BORDER-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>paddding and padding</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+        }
+        .pad{
+            height: 50px;
+            width: 50px;
+            padding: 2px;
+        }
+        #first{
+            border: 3px solid rgb(17, 0, 255);
+            box-sizing: border-box;
+            border-radius: 25px 15px 25px 15px ;
+            height: 50px;
+            width: 50px;
+            background-color: lightgreen;
+           padding: 5px ;
+           margin: 5px ;
+        }
+        #second{
+            border: 3px dashed red;
+            border-radius: 6px 26px 6px 6px ;
+            height: 50px;
+            width: 50px;
+            background-color: rgb(89, 161, 89);
+           padding: 5px ;
+           margin: 5px 5px 25px 5px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="first" class="pad">first</div>
+    <div id="second" class="pad"> second </div>
+</body>
+</html>

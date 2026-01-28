@@ -1,0 +1,39 @@
+<!-- transform rotate and scale  and translate and skew 
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> CSS TRANSFORM</title>
+    <style>
+        .box{
+            height:100px;
+            width:200px;
+            background-color: rgb(65, 174, 204);
+            border: 2px solid black;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            top:  50px;
+            left: 50px;
+            transition: all 0.5s ease-in-out 0s;
+            /* transform: rotate(0deg); */
+        }
+        .box:hover{     /*---  rotate x, y z change a tranisition -->*/
+
+            /* transform: rotate(45deg); */
+            /* transform: scale(0.5); */
+            /* transform: translate(50px ,50px); */
+            transform: skew(90deg);
+            background-color: rgb(129, 157, 165);
+        }
+    </style>
+        
+    
+</head>
+<body>
+    <!-- <div class="box">ROTATE</div> -->                                                       
+     <!-- <div class="box">SCALE</div> -->
+       <!-- <div class="box">TRANSLATE</div> -->
+        <div class="box">SKEW</div>                                                       
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ANIMATE</title>
+    <style>
+        .box{
+            height:100px;
+            width:100px;
+            border: 2px solid black;
+            border-radius: 10px;
+           text-align: center;
+            position: relative;
+            top:30px;
+            left:40px;
+            background-color: rgb(28, 162, 144);
+            /* animation: gumsala;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse; */
+            animation: gumsala 10ms ease-in-out 0s infinite alternate;
+
+        }   /*this basis for template is gumsala  */
+        @keyframes gumsala{
+            0%  {left: 10px ; }
+            50% { left: 199px;}
+            60% { left: 2px;}
+            100% {left: 200px;}
+            /* from{left : 10px;}
+            to{ left:300px;} */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">AKRAM</div>
+</body>
+</html>

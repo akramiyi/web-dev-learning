@@ -1,0 +1,35 @@
+  <!-- psuodo class 
+    transition -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>pseudo classes</title>
+    <style>
+        .pseudo{
+        height:35px;
+        width:200px;
+        border: 4px solid black;;
+        background-color: rgb(46, 127, 233);
+        border-radius: 15px;
+        /* transition-property: all;
+        transition-duration: 2s;
+        transition-timing-function: steps(3);
+        transition-delay: 0s; */
+        transition: all 1s ease-in-out 0s;
+    }
+    .pseudo:hover{
+        height:30px;
+        width:250px;
+        background-color: rgb(8, 212, 90);
+    }
+    .pseudo:active{
+        height:30px;
+        width:250px;
+        background-color: rgb(50, 71, 28);
+    }
+    </style>
+</head>
+<body>
+    <button class="pseudo">Learning pseudo </button>
+</body>
+</html>
