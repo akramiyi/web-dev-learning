@@ -29,7 +29,7 @@
     width: 48px;
 }
 .button:active{
-    background-color: rgba(93, 79, 63, 0.293);
+    background-color: rgba(63, 72, 93, 0.293);
 }
 .button_container{
     display: flex;

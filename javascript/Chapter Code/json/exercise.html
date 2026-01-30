@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>practice DOM </title>
+    <style>
+
+#my-button{
+    height: 50px;
+    width:50px;
+    font-size: 25px;
+}
+.odd{
+    background-color: blue;
+}
+.even{
+    background-color: black;
+}
+
+    </style>
+</head>
+<body>
+    <h3 id="greeting"></h3>
+<button id="my-button" onclick="buttonPress();">0</button>
+
+
+    <script>
+        let noOfTimesClick = 0;
+function buttonPress(){
+  
+    let button = document.querySelector('#my-button');
+    noOfTimesClick ++;
+    button.innerText = noOfTimesClick;
+}
+
+
+        function doGreeting (personName = 'Dear'){
+let date = new Date();
+let hour = date.getHours();
+let heading = document.querySelector('#greeting');
+
+if(hour > 5 && hour <12){
+    heading.innerText = `good morning ${personName}`;
+}else if  (hour > 12 && hour < 18){
+ heading.innerText = `good afternoon ${personName} `;
+}else {
+     heading.innerText = `good night ${personName}`;
+}
+        }
+        doGreeting('Akram');
+    </script>
+</body>
+</html>

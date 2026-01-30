@@ -6,6 +6,21 @@
     <style>
         body {
             text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #result {
+            font-weight: bold;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        .tie {
+            color: orange;
+        }
+        .win {
+            color: green;
+        }
+        .lose {
+            color: red;
         }
     </style>
 </head>
@@ -30,7 +45,51 @@
       showResult('Stump', computerChoice3, resultMsg3);
     ">Stump</button>
     
+    <button onclick="
+      localStorage.clear();
+      score = {
+        win: 0,
+        lost: 0,
+        tie: 0,
+        displayScore: function() {
+          return `Won: ${this.win}, Lost: ${this.lost}, Tie: ${this.tie}`;
+        }
+      };
+      document.querySelector('#result').innerText = 'Result: Game Reset!';
+      document.querySelector('#result').className = 'tie';
+      document.querySelector('#score').innerText = 'Score: ' + score.displayScore();
+    ">Reset</button>
+    
+    <h3 id="user-move"></h3>
+    <h3 id="computer-move"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
+    
     <script>
+        // Initialize or load score from localStorage
+        let score;
+        let scoreStr = localStorage.getItem('Score');
+        
+        if (scoreStr !== undefined && scoreStr !== null) {
+            score = JSON.parse(scoreStr);
+        } else {
+            score = {
+                win: 0,
+                lost: 0,
+                tie: 0,
+                displayScore: function() {
+                    return `Won: ${this.win}, Lost: ${this.lost}, Tie: ${this.tie}`;
+                }
+            };
+        }
+
+        // Ensure the displayScore method exists if loading from localStorage
+        if (!score.displayScore) {
+            score.displayScore = function() {
+                return `Won: ${this.win}, Lost: ${this.lost}, Tie: ${this.tie}`;
+            };
+        }
+
         function generateComputerChoice() {
             let randomNumber = Math.random() * 3;
             let computerChoice;
@@ -48,34 +107,51 @@
         function getResult(userMove, computerMove) {
             if (userMove === 'Bat') {
                 if (computerMove === 'Ball') {
-                    return 'User Won';
+                    score.win++;
+                    return {message: 'User Won', type: 'win'};
                 } else if (computerMove === 'Bat') {
-                    return 'It\'s a tie';
+                    score.tie++;
+                    return {message: 'It\'s a tie', type: 'tie'};
                 } else if (computerMove === 'Stump') {
-                    return 'computer has won';
+                    score.lost++;
+                    return {message: 'Computer has won', type: 'lose'};
                 }
             } else if (userMove === 'Ball') {
                 if (computerMove === 'Ball') {
-                    return 'It\'s a tie';
+                    score.tie++;
+                    return {message: 'It\'s a tie', type: 'tie'};
                 } else if (computerMove === 'Bat') {
-                    return 'Computer has Won';
+                    score.lost++;
+                    return {message: 'Computer has Won', type: 'lose'};
                 } else if (computerMove === 'Stump') {
-                    return 'User Won';
+                    score.win++;
+                    return {message: 'User Won', type: 'win'};
                 }
             } else {
-                
                 if (computerMove === 'Ball') {
-                    return 'computer has won';
+                    score.lost++;
+                    return {message: 'Computer has won', type: 'lose'};
                 } else if (computerMove === 'Bat') {
-                    return 'User Won';
+                    score.win++;
+                    return {message: 'User Won', type: 'win'};
                 } else if (computerMove === 'Stump') {
-                    return 'It\'s a tie';
+                    score.tie++;
+                    return {message: 'It\'s a tie', type: 'tie'};
                 }
             }
         }
         
         function showResult(userMove, computerMove, result) {
-            alert(`You Choose ${userMove} Computer choice is ${computerMove} and ${result}`);
+            localStorage.setItem('Score', JSON.stringify(score));
+            
+            // Update the display
+            document.querySelector('#user-move').innerText = `Akram Choose: ${userMove}`;
+            document.querySelector('#computer-move').innerText = `Computer Choose: ${computerMove}`;
+            document.querySelector('#result').innerText = `Result: ${result.message}`;
+            document.querySelector('#score').innerText = `Score: ${score.displayScore()}`;
+            
+            // Apply color based on result type
+            document.querySelector('#result').className = result.type;
         }
     </script>
 </body>
