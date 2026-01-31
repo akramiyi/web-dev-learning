@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Advance Function </title>
+</head>
+<body>
+    <script>  
+    
+                     // anonynomous function,,,,,,,,,,,,,,,,,,,,,,,
+
+
+    //  let sum  = function(num1, num2){
+    // return num1+ num2;
+    //     };
+//  let newSum =sum;
+//  let akram =newSum;
+//         console.log(sum(5,6));
+//          console.log(newSum(5,6));
+//           console.log(akram(5,6));
+//   let sumThreeNum = function (num1,num2,num3,sumTwoNumber){
+// let sum1 = sumTwoNumber(num1,num2);
+// return sumTwoNumber(sum1,num3);
+//   }
+//   console.log(sumThreeNum(3,4,5,sum));
+//   console.log( typeof sumThreeNum);
+
+
+
+ // ,,,,,,,,,,,,,,,arrow function.. => is function ................
+
+
+
+// let sum1 = (num1,num2) => {
+//     return num1+num2;
+// }
+// console.log(sum1(2,3));
+// let sum2 = (num3,num4) => num3+ num4;
+// console.log(sum2(2,3));
+
+
+                 
+// let square = (num) =>{
+//     return num*num;
+// }                                       // multi line 
+// console.log(square(4));
+
+
+// let square = num => num*num;       // single line
+//  console.log(square(4));
+
+
+
+   //....................setTimout and setInterval.................
+
+// let alarm =function(){
+//     console.log('so jaa bhai kab tak insta reels chalayega ')
+// };
+// console.log('Alaram Set Successfully')
+// setTimeout(alarm, 3000); // set time milseconds
+
+let alarm =() => console.log(`so jaa bhai kab tak insta reels chalayega. ${new Date()} `)
+                          // both are sme function
+// console.log('Alaram Set Successfully')
+
+//  let timerId = setTimeout(alarm, 3000);
+//  console.log(`alaram timerid :  ${timerId}`); // set time milseconds
+// clearTimeout(timerId);                          // cancel timeout
+
+  let intervalId = setInterval(alarm,1000);   // repeated indifine times
+  setTimeout(()=> clearTimeout(intervalId),5000  );             // stop
+
+    </script>
+</body>
+</html>
