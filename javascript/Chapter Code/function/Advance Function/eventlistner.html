@@ -4,11 +4,56 @@
     <title>Events</title>
 </head>
 <body>
-    <button id="my-button" >hello booo</button>
+    <button id="my-button">hello booo</button>
     <script>
-   let buttonElement = document.querySelector('#my-button');
-    buttonElement.addEventListener('click',event =>
-   console.log('I am clicked') );
+
+    //  let arr = [1,23,4,56,7,8,9,0,9,];
+    //  let odd = arr.filter((num,index) => {
+    //     if (num % 2 === 1){
+    //         return true ;
+    //     }else{
+    //         return false ;
+    //     }
+    //  });
+    //  console.log(odd);
+ let arr = [1,2,34,5,6,7];
+ let square = arr.map(num => num*num );
+ console.log(square);
+
+
+
+
+
+
+
+
+
+
+
+
+        // const buttonElement = document.querySelector('#my-button');
+        
+        // // Define all event handler functions
+        // function handleFirstClick() {
+        //     console.log('I am clicked');
+        // }
+        
+        // function handleSecondClick() {
+        //     console.log('Behaviour function called');
+        // }
+        
+        // function handleThirdClick() {
+        //     console.log('Clicked at:', new Date());
+        // }
+        
+        // // Add all event listeners
+        // buttonElement.addEventListener('click', handleFirstClick);
+        // buttonElement.addEventListener('click', handleSecondClick);
+        // buttonElement.addEventListener('click', handleThirdClick);
+        
+        // // To remove a specific listener later:
+        // buttonElement.removeEventListener('click', handleThirdClick);
+        
     </script>
-</body>
+</body> 
 </html>
